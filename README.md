@@ -35,6 +35,19 @@ Instale o requirements do projeto:
   pip install -r requirements.txt
 ```
     
+## Variáveis de Ambiente
+
+Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no seu .env
+
+`CALLME_URL`
+
+`CALLME_PHONE`
+
+`CALLME_API_KEY`
+
+O site da CallMeBot possui instruções de como obter os dados acima. [Acesse a documentação aqui](https://www.callmebot.com/es/blog/api-gratis-mensajes-whatsapp/)
+
+
 ## Executando o projeto localmente
 
 Execute o arquivo main para executar o script
