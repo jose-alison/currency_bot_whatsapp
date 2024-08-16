@@ -1,5 +1,7 @@
+import locale
 import requests
 
+locale.setlocale(locale.LC_ALL, 'pt_BR')
 class CurrencyConversorService:
     """
     Serviço de conversão de moedas utilizando a API AwesomeAPI.
@@ -33,5 +35,11 @@ class CurrencyConversorService:
 
         if response.status_code == 404:
             return response.json().get('message')
-        return response.json().get(f'{coin_origin}{coin_target}').get('bid')
+        valor = response.json().get(f'{coin_origin}{coin_target}').get('bid')
+        valor = locale.currency(
+            float(valor),
+            grouping=True
+            )
+        return valor
+
     
