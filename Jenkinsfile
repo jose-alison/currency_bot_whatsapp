@@ -13,7 +13,14 @@ pipeline {
             steps {
                 script {
                     sh 'python -m venv venv'
-                    sh '. venv/Scripts/activate && pip install -r requirements.txt'
+                    sh '. venv/bin/activate && pip install -r requirements.txt'
+                }
+            }
+        }
+        stage('Run Project') {
+            steps {
+                script {
+                    sh '. venv/bin/activate && python main.py'
                 }
             }
         }
