@@ -5,14 +5,15 @@ pipeline {
         stage ('Pull Image') {
             steps {
                 script {
-                    sh 'git pull origin main'
+                    sh 'git fetch'
+                    sh 'git pull'
                 }
             }
         }
         stage('Build Image') {
             steps {
                 script {
-                    sh 'python -m venv venv'
+                    sh 'python3 -m venv venv'
                     sh '. venv/bin/activate && pip install -r requirements.txt'
                 }
             }
@@ -20,7 +21,7 @@ pipeline {
         stage('Run Project') {
             steps {
                 script {
-                    sh '. venv/bin/activate && python main.py'
+                    sh '. venv/bin/activate && python3 main.py'
                 }
             }
         }
