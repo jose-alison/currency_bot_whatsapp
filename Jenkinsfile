@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     sh 'git fetch'
-                    sh 'git pull'
+                    sh 'git pull origin feature/create_pipeline'
                 }
             }
         }
